@@ -7,6 +7,9 @@
 
 # Info
 `src/index.ts` - Image generation service
+
 `src/playwright/screenshotService` - Screenshot service
+
 `src/components/Example.tsx` - The component controlling the look of the output
+
 `src/bot/index.ts` - Bot main file
