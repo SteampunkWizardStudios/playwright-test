@@ -1,6 +1,6 @@
 import express from "express";
 import { render } from "preact-render-to-string";
-import MyImage from "./MyImage";
+import Example from "./components/Example";
 
 const app = express();
 app.use(express.json());
@@ -8,20 +8,13 @@ app.use(express.json());
 const port = 3000;
 
 app.post("/", (req, res) => {
-  const items = Array.isArray(req.body.items) ? req.body.items : undefined;
-  const myImage = render(<MyImage items={items} />);
+  const { avatarUrl, username } = req.body;
+  const example = render(<Example avatarUrl={"https://cdn.discordapp.com/avatars/1206295979918106705/2ea4307d0b310f97d76c8ecdb7d8c22f.png?size=1024"} username={"steampunkWizard"} />);
   res.send(`
     <!DOCTYPE html>
     <html>
-      <head>
-        <style>
-          body {
-            background: #18181b;
-          }
-        </style>
-      </head>
       <body>
-        ${myImage}
+        ${example}
       </body>
     </html>
   `);

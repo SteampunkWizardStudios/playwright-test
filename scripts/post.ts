@@ -10,9 +10,7 @@ const streamPipeline = promisify(pipeline);
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      items: ["Hello", "World"],
-    }),
+    body: JSON.stringify({}),
   });
 
   const nodeStream = response.body as unknown as NodeJS.ReadableStream;
