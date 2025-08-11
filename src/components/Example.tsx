@@ -10,7 +10,7 @@ export default function Example({ avatarUrl, username }: ExampleProps) {
         maxWidth: 320,
         margin: "1rem auto",
         padding: "1.5rem",
-        borderRadius: "1rem",
+        borderRadius: "2rem",
         boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
 		background: "#1f1f1f",
         display: "flex",

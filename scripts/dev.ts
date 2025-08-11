@@ -1,2 +1,3 @@
-import "../src/index";
-import "../src/playwright/screenshotService";
+import "../src/index.js";
+import "../src/playwright/screenshotService.js";
+import "../src/bot/index.js"
