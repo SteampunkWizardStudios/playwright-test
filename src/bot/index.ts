@@ -63,7 +63,7 @@ async function gracefulShutdown() {
     }
 
     await Promise.all(disconnectPromises);
-    console.log("All services disconnected.");
+    console.log("Bot shut down gracefully");
   } catch (error) {
     console.error("Error during graceful shutdown:", error);
   } finally {
