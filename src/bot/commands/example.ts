@@ -17,15 +17,24 @@ const supportCommand: SlashCommand = {
     .setIntegrationTypes(
       ApplicationIntegrationType.GuildInstall,
       ApplicationIntegrationType.UserInstall
+    )
+    .addStringOption((opt) =>
+      opt
+        .setName("quote")
+        .setDescription("The quote to display")
+        .setRequired(true)
     ),
   async execute(interaction) {
     await interaction.deferReply();
+
+    const quote = interaction.options.getString("quote", true);
 
     const response = await fetch("http://localhost:3001", {
       method: "POST",
       body: JSON.stringify({
         avatarUrl: interaction.user.displayAvatarURL(),
-		username: interaction.user.displayName
+        username: interaction.user.displayName,
+        text: quote,
       }),
       headers: {
         "Content-Type": "application/json",

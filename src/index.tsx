@@ -8,8 +8,10 @@ app.use(express.json());
 const port = 3000;
 
 app.post("/", (req, res) => {
-  const { avatarUrl, username } = req.body;
-  const example = render(<Example avatarUrl={avatarUrl} username={username} />);
+  const { avatarUrl, username, text } = req.body;
+  const example = render(
+    <Example avatarUrl={avatarUrl} username={username} text={text} />
+  );
   res.send(`
     <!DOCTYPE html>
     <html>

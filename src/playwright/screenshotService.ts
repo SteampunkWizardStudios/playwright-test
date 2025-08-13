@@ -25,7 +25,7 @@ app.post("/", async (req, res) => {
   const html = await response.text();
   await page.setContent(html);
 
-  const element = page.locator("div");
+  const element = page.locator("#example");
   const screenshot = await element.screenshot({ omitBackground: true });
   await page.close();
   res.set("Content-Type", "image/png");
